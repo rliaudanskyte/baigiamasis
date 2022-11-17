@@ -12,22 +12,22 @@ public class Employee {
     @Id
     private long employeeId;
     private String name;
-    private String surname;
     private String jobTitle;
     private long qualificationCertificateNum;
     private LocalDate startedWorking;
-    private LocalDate stoppedWorking;
+    private Boolean ifStillWorking;
+    private long companyId;
 
     public Employee() {}
 
-    public Employee(long employeeId, String name, String surname, String jobTitle, long qualificationCertificateNum, LocalDate startedWorking, LocalDate stoppedWorking) {
+    public Employee(long employeeId, String name, String jobTitle, long qualificationCertificateNum, LocalDate startedWorking, boolean ifStillWorking, long companyId) {
         this.employeeId = employeeId;
         this.name = name;
-        this.surname = surname;
         this.jobTitle = jobTitle;
         this.qualificationCertificateNum = qualificationCertificateNum;
         this.startedWorking = startedWorking;
-        this.stoppedWorking = stoppedWorking;
+        this.ifStillWorking = ifStillWorking;
+        this.companyId = companyId;
     }
 
     public long getEmployeeId() {
@@ -44,14 +44,6 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getJobTitle() {
@@ -78,12 +70,28 @@ public class Employee {
         this.startedWorking = startedWorking;
     }
 
-    public LocalDate getStoppedWorking() {
-        return stoppedWorking;
+    public boolean getStoppedWorking() {
+        return ifStillWorking;
     }
 
-    public void setStoppedWorking(LocalDate stoppedWorking) {
-        this.stoppedWorking = stoppedWorking;
+    public void setStoppedWorking(boolean stoppedWorking) {
+        this.ifStillWorking = ifStillWorking;
+    }
+
+    public Boolean getIfStillWorking() {
+        return ifStillWorking;
+    }
+
+    public void setIfStillWorking(Boolean ifStillWorking) {
+        this.ifStillWorking = ifStillWorking;
+    }
+
+    public long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(long companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -91,11 +99,10 @@ public class Employee {
         return "Employee{" +
                 "employeeId=" + employeeId +
                 ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", qualificationCertificateNum=" + qualificationCertificateNum +
                 ", startedWorking=" + startedWorking +
-                ", stoppedWorking=" + stoppedWorking +
+                ", stoppedWorking=" + ifStillWorking +
                 '}';
     }
 }

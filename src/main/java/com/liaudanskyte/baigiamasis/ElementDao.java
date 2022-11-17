@@ -1,6 +1,7 @@
 package com.liaudanskyte.baigiamasis;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ElementDao<T> {
     //CRUD [personal note]
@@ -8,7 +9,7 @@ public interface ElementDao<T> {
 
     List<T> getAllElements();
 
-    T getById(Long id);
+    Optional<T> getById(Long id);
 
     T updateElement(T element);
 

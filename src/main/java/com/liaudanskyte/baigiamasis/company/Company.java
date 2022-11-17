@@ -16,23 +16,23 @@ public class Company {
     private int employeeCount;
     @GeneratedValue
     private double averageSalary;
-    @GeneratedValue
+
     private int totalProjects;
     @GeneratedValue
     private int ongoingProjectCount;
-    @GeneratedValue
+
     private int finishedProjectCount;
 
     public Company() {}
 
-    public Company(long id, String companyName, String address, int employeeCount, double averageSalary, int totalProjects, int ongoingProjectCount, int finishedProjectCount) {
+    public Company(long id, String companyName, String address, int employeeCount, double averageSalary, int totalProjects, int finishedProjectCount) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
         this.employeeCount = employeeCount;
         this.averageSalary = averageSalary;
         this.totalProjects = totalProjects;
-        this.ongoingProjectCount = ongoingProjectCount;
+        this.ongoingProjectCount = totalProjects - finishedProjectCount;
         this.finishedProjectCount = finishedProjectCount;
     }
 

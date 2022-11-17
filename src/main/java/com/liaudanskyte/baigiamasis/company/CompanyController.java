@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CompanyController {
@@ -21,7 +22,7 @@ public class CompanyController {
     }
 
     @PostMapping("/companies")
-    public Company createCompany(@RequestBody Company company) {
+    public Optional<Company> createCompany(@RequestBody Company company) {
 //        var company = new Company(
 //                123123123L,
 //                "The Lightsaber company",
@@ -33,14 +34,11 @@ public class CompanyController {
 //                5
 //        );
         System.out.println(companyRepository.create(company));
-        System.out.println("me cia atejau");
         return companyRepository.getById(company.getId());
     }
 
     @GetMapping("/companies")
     public List<Company> getCompanies() {
-        var listOfCompanies = companyRepository.getAllElements();
-        System.out.println("me cia atejau SU VISAIS DRAUGAIS");
         return companyRepository.getAllElements();
     }
 

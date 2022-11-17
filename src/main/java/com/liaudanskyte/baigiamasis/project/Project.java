@@ -28,7 +28,6 @@ public class Project {
         this.ifFinished = ifFinished;
         this.projectManagerId = projectManagerId;
         this.companyExecuiveId = companyExecuiveId;
-
     }
 
     public long getProjectId() {
