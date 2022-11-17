@@ -38,6 +38,11 @@ button {
     background-color: #91d4e3;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.display-table{
+    display: none;
 }
 
 footer {
