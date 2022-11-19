@@ -16,18 +16,18 @@ public class Project {
     private LocalDate projectStartDate;
     private boolean ifFinished;
     private long projectManagerId;
-    private long companyExecuiveId;
+    private long companyExecutiveId;
 
     public Project() {}
 
-    public Project(long projectId, String projectName, String projectLocation, LocalDate projectStartDate, boolean ifFinished, long projectManagerId, long companyExecuiveId) {
+    public Project(long projectId, String projectName, String projectLocation, LocalDate projectStartDate, boolean ifFinished, long projectManagerId, long companyExecutiveId) {
         this.projectId = projectId;
         this.projectName = projectName;
         this.projectLocation = projectLocation;
         this.projectStartDate = projectStartDate;
         this.ifFinished = ifFinished;
         this.projectManagerId = projectManagerId;
-        this.companyExecuiveId = companyExecuiveId;
+        this.companyExecutiveId = companyExecutiveId;
     }
 
     public long getProjectId() {
@@ -78,12 +78,12 @@ public class Project {
         this.projectManagerId = projectManagerId;
     }
 
-    public long getCompanyExecuiveId() {
-        return companyExecuiveId;
+    public long getCompanyExecutiveId() {
+        return companyExecutiveId;
     }
 
-    public void setCompanyExecuiveId(long companyExecuiveId) {
-        this.companyExecuiveId = companyExecuiveId;
+    public void setCompanyExecutiveId(long companyExecuiveId) {
+        this.companyExecutiveId = companyExecuiveId;
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Project {
                 ", projectStartDate=" + projectStartDate +
                 ", ifFinished=" + ifFinished +
                 ", projectManagerId=" + projectManagerId +
-                ", companyExecuiveId=" + companyExecuiveId +
+                ", companyExecutiveId=" + companyExecutiveId +
                 " //";
     }
 }

@@ -9,6 +9,10 @@ main,
     flex-direction: column;
     align-items: center;
     margin: 0 10px;
+    margin-inline: auto;
+    width: calc(100% - 4rem);
+    max-width: 900px;
+
 }
 
 header > *  {
@@ -43,6 +47,18 @@ button {
 
 .display-table{
     display: none;
+}
+
+table {   
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+th {
+    padding: 10px;
 }
 
 footer {

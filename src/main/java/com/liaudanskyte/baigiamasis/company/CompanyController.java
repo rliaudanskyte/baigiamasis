@@ -1,7 +1,5 @@
 package com.liaudanskyte.baigiamasis.company;
 
-import com.liaudanskyte.baigiamasis.employee.EmployeeRepository;
-import com.liaudanskyte.baigiamasis.project.ProjectReopsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,24 +19,15 @@ public class CompanyController {
         this.companyRepository = companyRepository;
     }
 
-    @PostMapping("/companies")
+    @PostMapping("/api/v1/companies")
     public Optional<Company> createCompany(@RequestBody Company company) {
-//        var company = new Company(
-//                123123123L,
-//                "The Lightsaber company",
-//                "Tatuine",
-//                12,
-//                5000,
-//                10,
-//                5,
-//                5
-//        );
         System.out.println(companyRepository.create(company));
         return companyRepository.getById(company.getId());
     }
 
-    @GetMapping("/companies")
+    @GetMapping("/api/v1/companies")
     public List<Company> getCompanies() {
+        companyRepository.updateCompanyTableEmployeeFields();
         return companyRepository.getAllElements();
     }
 

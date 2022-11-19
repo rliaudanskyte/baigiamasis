@@ -1,4 +1,4 @@
-package com.liaudanskyte.baigiamasis.employee;
+package com.liaudanskyte.baigiamasis.project;
 
 import com.liaudanskyte.baigiamasis.ElementDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,40 +10,40 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class EmployeeRepository implements ElementDao<Employee> {
+public class ProjectRepository implements ElementDao<Project> {
 
-    private final EmployeeJpa employeeJpa;
+    private ProjectJpa projectJpa;
 
-    public EmployeeRepository(@Autowired EmployeeJpa employeeJpa) {
-        this.employeeJpa = employeeJpa;
+    public ProjectRepository(@Autowired ProjectJpa projectJpa) {
+        this.projectJpa = projectJpa;
     }
 
     @Override
-    public Employee create(Employee element) {
-        return employeeJpa.save(element);
+    public Project create(Project element) {
+        return projectJpa.save(element);
     }
 
     @Override
-    public List<Employee> getAllElements() {
-        return employeeJpa.findAll();
+    public List<Project> getAllElements() {
+        return projectJpa.findAll();
     }
 
     @Override
-    public Optional<Employee> getById(Long id) {
-        return employeeJpa.findById(id);
+    public Optional<Project> getById(Long id) {
+        return projectJpa.findById(id);
     }
 
     @Override
-    public Employee updateElement(Employee element) {
-        return employeeJpa.save(element);
+    public Project updateElement(Project element) {
+        return projectJpa.save(element);
     }
 
     @Override
     public void deleteElement(Long id) {
-        employeeJpa.deleteById(id);
+        projectJpa.deleteById(id);
     }
 
-    public List<Employee> saveAll(List<Employee> employees) {return employeeJpa.saveAll(employees); }
+    public boolean ifExists(Long id) { return projectJpa.findById(id).isPresent(); }
 
     @Modifying
     @Query("""

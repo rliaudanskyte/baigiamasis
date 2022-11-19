@@ -21,27 +21,17 @@ public class EmployeeController {
         this.faker = new Faker();
     }
 
-    @PostMapping("/employees")
+    @PostMapping("/api/v1/employees")
     public Optional<Employee> createEmployee(@RequestBody Employee employee) {
-//        var employee1 = new Employee(
-//                500000003L,
-//                faker.superhero().name(),
-//                faker.superhero().power(),
-//                512665516L,
-//                LocalDate.of(1955,1,25),
-//                true,
-//                123123124L
-//        );
-
         employeeRepository.create(employee);
-//        System.out.println(employeeRepository.create(employee1));
         return employeeRepository.getById(employee.getEmployeeId());
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/api/v1/employees")
     public List<Employee> getCompanyEmployees() {
         return employeeRepository.getAllElements();
     }
+
 
 
 }
