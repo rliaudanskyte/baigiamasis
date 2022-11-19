@@ -19,14 +19,13 @@ import java.util.Optional;
 public class ProjectController {
     private ProjectRepository projectRepository;
 
-    public ProjectController(@Autowired ProjectRepository projectReopsitory) {
-        this.projectRepository = projectReopsitory;
+    public ProjectController(@Autowired ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
     @PostMapping("/api/v1/projects")
     public Optional<Project> createProject(@RequestBody Project project) {
         projectRepository.create(project);
-        projectRepository.updateCompanyTableEmployeeFields();
         return projectRepository.getById(project.getProjectId());
     }
 

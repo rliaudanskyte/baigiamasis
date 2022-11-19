@@ -27,7 +27,6 @@ public class CompanyController {
 
     @GetMapping("/api/v1/companies")
     public List<Company> getCompanies() {
-        companyRepository.updateCompanyTableEmployeeFields();
         return companyRepository.getAllElements();
     }
 
