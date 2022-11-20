@@ -8,40 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
         <div class="header-text-container">
             <h1>WonderCorp</h1>
             <h3>Inner corporation's managment system</h3>    
-        </div>        
-        <div class="header-brand-container">
-            <h1 class="corp-name"></h1>
         </div>
     </header>
     <main>
         <div class="corp-buttons">
-            <button id="lightsaber-select-button">The Lightsaber company</button>
-            <button id="avengers-select-button">The Avengers corp</button>
-            <button id="fellowship-select-button">The Fellowship Inc</button>
-        </div>
-        <div class="display-table">
-            <table>
-                <thead>                    
-                    <tr>
-                        <th>Id</th>
-                        <th>Company name</th>
-                        <th>Address</th>
-                        <th>Employee count</th>
-                        <th>Average salary</th>
-                        <th>Total projects</th>
-                        <th>Ongoing projects</th>
-                        <th>Finished projects</th>
-                    </tr>
-                </thead>
-                <tbody id="t-body"></tbody>
-            </table>
+            <div class="button-container">
+
+                <div class="buttons-slide-out">                    
+                    <button class="action-button"><a class="add button-link" href="#">Add</a></button>
+                    <button class="action-button"><a class="edit button-link" href="#">Edit</a></button>                
+                    </a>                    
+                    <button class="action-button"><a class="del button-link" href="#">Del</a></button>                
+                </div>
+                <div class="buttons-with-company-name">
+                    <button class="corp-button"><a class="corp-button-link" href="#">The Lightsaber company</a></button>                
+                </div>
+
+            </div>
+            <div class="button-container">
+                <div class="buttons-slide-out">                    
+                    <button class="action-button"><a class="add button-link" href="#">Add</a></button>
+                    <button class="action-button"><a class="edit button-link" href="#">Edit</a></button>                
+                    </a>                    
+                    <button class="action-button"><a class="del button-link" href="#">Del</a></button>                
+                </div>
+                <div class="buttons-with-company-name">
+                    <button class="corp-button"><a class="corp-button-link" href="#">The Avengers corp</a></button>                
+                </div>                
+            </div>
+            <div class="button-container">
+                <div class="buttons-slide-out">                    
+                    <button class="action-button"><a class="add button-link" href="#">Add</a></button>
+                    <button class="action-button"><a class="edit button-link" href="#">Edit</a></button>                
+                    </a>                    
+                    <button class="action-button"><a class="del button-link" href="#">Del</a></button>                
+                </div>
+                <div class="buttons-with-company-name">
+                    <button class="corp-button"><a class="corp-button-link" href="#"> The Fellowship Inc</a></button>                
+                </div>
+            </div>
         </div>
     </main>
     <footer>
@@ -49,6 +61,7 @@
     </footer>
 
 
-    <script src="main.js"></script>
+    <script src="../javascript/main.js"></script>
+    <!-- <script src="../javascript/companyHome.js"></script> -->
 </body>
 </html>
