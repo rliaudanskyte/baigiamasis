@@ -17,3 +17,5 @@ Run or build spring boot project with your IDE `src/main/java/com/liaudanskyte/b
 Spring boot is not covered with unit tests **_YET_**
 
 Will happen shortly
+
+This project was created with love, sweat and tears. Figma, Maven, StackOverflow and Google in general did contribute too 
