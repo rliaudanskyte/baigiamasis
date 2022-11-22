@@ -21,6 +21,7 @@ public class ProjectRepository implements ElementDao<Project> {
 
     @Override
     public Project create(Project element) {
+        projectJpa.updateCompaniesTable();
         return projectJpa.save(element);
     }
 
@@ -36,11 +37,13 @@ public class ProjectRepository implements ElementDao<Project> {
 
     @Override
     public Project updateElement(Project element) {
+        projectJpa.updateCompaniesTable();
         return projectJpa.save(element);
     }
 
     @Override
     public void deleteElement(Long id) {
+        projectJpa.updateCompaniesTable();
         projectJpa.deleteById(id);
     }
 

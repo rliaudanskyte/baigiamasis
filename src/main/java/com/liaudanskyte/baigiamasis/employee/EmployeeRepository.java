@@ -21,6 +21,7 @@ public class EmployeeRepository implements ElementDao<Employee> {
 
     @Override
     public Employee create(Employee element) {
+        employeeJpa.updateCompaniesTable();
         return employeeJpa.save(element);
     }
 
@@ -36,20 +37,19 @@ public class EmployeeRepository implements ElementDao<Employee> {
 
     @Override
     public Employee updateElement(Employee element) {
+        employeeJpa.updateCompaniesTable();
         return employeeJpa.save(element);
     }
 
     @Override
     public void deleteElement(Long id) {
+        if (!getAllElements().isEmpty()) {
+            employeeJpa.updateCompaniesTable();
+        }
         employeeJpa.deleteById(id);
     }
 
     public List<Employee> saveAll(List<Employee> employees) {return employeeJpa.saveAll(employees); }
 
-    @Modifying
-    @Query(value = "UPDATE companies SET total_projects = (SELECT COUNT(*) FROM projects WHERE companies.id = projects.company_executive_id), ongoing_project_count = (SELECT COUNT(*) FROM projects WHERE companies.id = projects.company_executive_id AND projects.if_finished = false), finished_project_count = (SELECT COUNT(*) FROM projects WHERE companies.id = projects.company_executive_id AND projects.if_finished = true), average_salary = (SELECT AVG(salary) FROM employees WHERE companies.id = employees.company_id), employee_count = (SELECT COUNT(*) FROM employees WHERE companies.id = employees.company_id AND employees.if_still_working = true); SELECT * FROM companies ORDER BY id ASC; ",
-            nativeQuery = true)
-    void updateCompanyTableEmployeeFields() {
-        System.out.println("updated company fields");
-    }
+    public boolean ifExists(long employee_id) { return employeeJpa.findById(employee_id).isPresent(); }
 }

@@ -26,13 +26,11 @@ public class CompanyRepository implements ElementDao<Company> {
 
     @Override
     public List<Company> getAllElements() {
-        companyJpa.updateMyStupidTable();
         return companyJpa.findAll();
     }
 
     @Override
     public Optional<Company> getById(Long id) {
-        companyJpa.updateMyStupidTable();
         return companyJpa.findById(id);
     }
 
@@ -45,4 +43,6 @@ public class CompanyRepository implements ElementDao<Company> {
     public void deleteElement(Long id) {
         companyJpa.deleteById(id);
     }
+
+    public boolean ifExists(long company_id) { return companyJpa.findById(company_id).isPresent(); }
 }
