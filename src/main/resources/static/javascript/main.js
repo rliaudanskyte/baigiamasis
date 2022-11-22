@@ -6,8 +6,8 @@ let companyIDToLS;
 
 sessionStorage.clear();
 
-fetch(ENDPOINT, {
-// fetch(ENDPOINTcompaniesHTTP, {
+// fetch(ENDPOINT, {
+fetch(ENDPOINTcompaniesHTTP, {
     mode: "cors"
 })
     .then(data => data.json())
@@ -79,35 +79,8 @@ const createButtons = (element) => {
 
 }
 
-let btns = document.querySelectorAll('.corp-button');
-console.table(btns);
-
-for (i of btns) {
-  (function(i) {
-    i.addEventListener('click', function(e) {
-      console.log(i);
-      console.log('clicked');
-      alert(e.target.parentNode.className + " button")
-    });
-  })(i);
-}
-
-let btnsLinks = document.querySelectorAll('.corp-button > .button-link');
-console.table(btnsLinks);
-
-for (i of btnsLinks) {
-  (function(i) {
-    i.addEventListener('click', function(e) {
-      console.log(i);
-      console.log('clicked');
-      alert(e.target.parentNode.className + " target link")
-    });
-  })(i);
-}
-
 document.body.addEventListener('click', event => {
   if (event.target.nodeName == "A") {
-    // console.log("Clicked on <a>.", event.target.parentNode.className, event.target.parentNode.parentNode.parentNode.id);
     companyIDToLS = event.target.parentNode.parentNode.parentNode.id;
     localStorage.setItem("companyID", companyIDToLS);
     if (event.target.parentNode.className == "action-button-del") {
@@ -118,7 +91,6 @@ document.body.addEventListener('click', event => {
     }
   }
   if (event.target.nodeName == "BUTTON") {
-    // console.log("yay, button", event.target.className, event.target.parentNode.parentNode.id);
     companyIDToLS = event.target.parentNode.parentNode.id;
     localStorage.setItem("companyID", companyIDToLS);
     if (event.target.className == "action-button-del") {
@@ -134,10 +106,12 @@ document.body.addEventListener('click', event => {
 })
 
 const deleteCompanyById = companyToDeleteID => {
-  fetch(`${ENDPOINTcompanies}/${companyToDeleteID}`, {
+  fetch(`${ENDPOINTcompaniesHTTP}/${companyToDeleteID}`, {
     method: 'DELETE',
     mode: "cors"
   })
   .then(res => res.json())
-  .then(() => location.reload());
+  .then(data => {
+    window.location.reload(true);
+  });
 }

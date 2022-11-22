@@ -84,14 +84,13 @@ const postCompanyToServer = (obj) => {
 
 employeeForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(companyIdValue);
-    const employeeId = target.elements.employeeID.value;
-    const name = target.elements.employeeName.value;
-    const jobTitle = target.elements.jobTitle.value;
-    const certifNum = target.elements.certifNum.value;
-    const salary = target.elements.salary.value;
-    const startedWorking = target.elements.startedWorking.value;
-    const ifStillWorking = target.elements.ifStillWorking.value;
+    const employeeId = e.target.elements.employeeID.value;
+    const name = e.target.elements.employeeName.value;
+    const jobTitle = e.target.elements.jobTitle.value;
+    const certifNum = e.target.elements.certifNum.value;
+    const salary = e.target.elements.salary.value;
+    const startedWorking = e.target.elements.startedWorking.value;
+    const ifStillWorking = e.target.elements.ifStillWorking.value;
     const companyId = companyIdValue;
 
     const newCorp = new Employee(employeeId, name, jobTitle, certifNum, salary, startedWorking, ifStillWorking, companyId);
@@ -99,7 +98,14 @@ employeeForm.addEventListener('submit', (e) => {
     console.table(newCorp);
     postEmployeeToServer(newCorp);
 
-    document.querySelector('#congrats').style.display = "block";
+    employeeFormTitle.style.display = "none";
+    employeeForm.style.display = "none";
+
+    Object.assign(document.querySelector('#congrats').style, {
+        display: "block",
+        textAlign: "center"
+    })
+
 })
 
 const postEmployeeToServer = (obj) => {    

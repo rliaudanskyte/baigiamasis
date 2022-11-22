@@ -79,7 +79,7 @@ button {
     cursor: pointer;
 }
 
-.btn-box > button {
+.btn-box > a >  button {
     width: calc(100% - 4rem);
     max-width: 200px;
     min-width: 140px;
@@ -90,7 +90,6 @@ button {
 
 a {
     height: 100%;
-    width: 100%;
     color: #000;
     text-decoration: none;
 } 
@@ -168,7 +167,8 @@ button:hover {
 
 @media screen and (max-width: 450px) {
     header,
-    .button-container {
+    .button-container,
+    .info-unit {
         grid-template-columns: 1fr;
     }
     
