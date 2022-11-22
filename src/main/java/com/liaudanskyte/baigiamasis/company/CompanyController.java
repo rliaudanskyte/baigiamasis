@@ -41,7 +41,7 @@ public class CompanyController {
     }
 
     @PutMapping("/api/v1/companies/{company_id}")
-    public Optional<Company> deleteCompanyById(
+    public Optional<Company> updateCompanyById(
             @PathVariable long company_id,
             @RequestBody Company companyDetails
     ) {

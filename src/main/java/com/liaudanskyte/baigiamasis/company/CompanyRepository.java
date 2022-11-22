@@ -26,11 +26,13 @@ public class CompanyRepository implements ElementDao<Company> {
 
     @Override
     public List<Company> getAllElements() {
+        companyJpa.updateMyStupidTable();
         return companyJpa.findAll();
     }
 
     @Override
     public Optional<Company> getById(Long id) {
+        companyJpa.updateMyStupidTable();
         return companyJpa.findById(id);
     }
 

@@ -1,7 +1,7 @@
 const corpButtonsContainer = document.querySelector(".corp-buttons");
 let cookie = document.cookie;
 // const ENDPOINT = '../local_json_files/companies.json';
-const ENDPOINT = 'http://http://localhost:8080/api/v1/companies';
+const ENDPOINT = 'http://localhost:8080/api/v1/companies';
 
 sessionStorage.clear();
 

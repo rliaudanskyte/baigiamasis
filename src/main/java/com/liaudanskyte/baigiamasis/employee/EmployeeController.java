@@ -2,6 +2,7 @@ package com.liaudanskyte.baigiamasis.employee;
 
 import com.github.javafaker.Faker;
 import com.liaudanskyte.baigiamasis.InvalidRequestException;
+import com.liaudanskyte.baigiamasis.company.Company;
 import com.liaudanskyte.baigiamasis.project.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,5 +44,34 @@ public class EmployeeController {
     }
 
 
+    @PutMapping("/api/v1/employees/{employee_id}")
+    public Optional<Employee> updateEmployeeById(
+            @PathVariable long employee_id,
+            @RequestBody Employee employeeDetails
+    ) {
+        var updateEmployee = employeeRepository.getById(employee_id)
+                .orElseThrow(() -> new InvalidRequestException("Project does not exist with id: " + employee_id));
+
+        updateEmployee.setEmployeeId(employee_id);
+        updateEmployee.setName(employeeDetails.getName());
+        updateEmployee.setJobTitle(employeeDetails.getJobTitle());
+        updateEmployee.setQualificationCertificateNum(employeeDetails.getQualificationCertificateNum());
+        updateEmployee.setSalary(employeeDetails.getSalary());
+        updateEmployee.setStartedWorking(employeeDetails.getStartedWorking());
+        updateEmployee.setIfStillWorking(employeeDetails.getIfStillWorking());
+        updateEmployee.setCompanyId(employeeDetails.getCompanyId());
+        updateEmployee.setStoppedWorking(employeeDetails.getStoppedWorking());
+
+        employeeRepository.updateElement(updateEmployee);
+
+        return employeeRepository.getById(employee_id);
+    }
+    
+
+    @DeleteMapping("/api/v1/employees/{employee_id}")
+    public void deleteEmployeeById(@PathVariable(name = "employee_id") long employee_id) {
+        employeeRepository.deleteElement(employee_id);
+        System.out.println("deleted where id: " + employee_id);
+    }
 
 }
