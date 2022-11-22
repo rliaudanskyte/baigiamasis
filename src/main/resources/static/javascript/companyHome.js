@@ -41,6 +41,8 @@ const setupDataDisplay = element => {
     dataCorptotalActiveEmps.textContent = element.employeeCount;
     dataCorpActiveProjects.textContent = element.ongoingProjectCount;
     dataCorpFinishedProjects.textContent = element.finishedProjectCount;
+
+    localStorage.setItem("companyName", element.companyName);
 }  
 
 fetch(`${employeesHTTP}/of/${companyToEditID}`, {

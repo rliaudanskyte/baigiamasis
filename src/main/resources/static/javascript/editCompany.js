@@ -12,7 +12,7 @@ fetch(`${ENDPOINTcompaniesHTTP}/${companyToEditID}`, {
         .then(data => data.json())
         .then(data => {
             console.table(data);
-            setupForm(element);
+            setupForm(data);
             return data;
         })
         .catch(err => console.log(err));
