@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/addNewEmpStyles.css">
+</head>
+<body>
+    <header>
+        <div class="header-text-container">
+            <h1>WonderCorp</h1>
+            <h3>Inner corporation's managment system</h3>    
+        </div>
+        <div class="header-brand-container">
+            <h1 class="corp-name">The Lightsaber company</h1>
+        </div>
+    </header>
+    <main>
+        <h3 id="employee-form-title">Add new employee to the company</h3>
+        <form  id="employee-form" method="POST">
+            <input type="text" name="employeeName" id="employeeName" placeholder="Employee name" value="Murklas">
+            <input type="number" name="employeeID" id="employeeID" placeholder="Employee ID" value="1564236444">
+            <input type="text" name="jobTitle" id="jobTitle" placeholder="Job title" value="Sleeper agent">
+            <input type="number" name="certifNum" id="certifNum" placeholder="Certification number" value="1235568213">
+            <input type="number" name="salary" id="salary" placeholder="Yearly salary" value="1000000">
+            <input type="text" name="startedWorking" id="startedWorking" placeholder="Started working(yyyy-MM-dd)" value="2012-05-08">
+            <input type="text" name="ifStillWorking" id="ifStillWorking" placeholder="If still working" value="true">
+            <input type="submit" value="Submit">
+        </form>
+        
+        <h2 id="congrats">Submition successful</h2>
+
+    </main>
+    <footer>
+        <button id="go-home"><a href="companyHome.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></button>
+        <p>All rights reserved WonderCorp© 2022</p>
+    </footer>
+
+
+
+    <script src="javascript\addNewEmp.js"></script>
+</body>
+</html>
