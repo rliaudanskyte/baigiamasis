@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WonderCorp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,10 +36,6 @@
                 <div class="display-titles data-to-display" id="total-active-emps">7</div>
             </div>
             <div class="info-unit">
-                <div class="display-titles titles corp-avg-salary">Average salary</div>
-                <div class="display-titles data-to-display" id="corp-avg-salary">181412.0 €/year</div>
-            </div>
-            <div class="info-unit">
                 <div class="display-titles titles corp-active-projects">Active project count</div>
                 <div class="display-titles data-to-display" id="corp-active-projects">3</div>
             </div>
@@ -50,12 +45,16 @@
             </div>
         </div>
         <div class="button-container">
-            <button class="button-container-btns see-employee-list">Employees</button>
-            <button class="button-container-btns see-project-list">Projects</button>
+            <div class="empBtns btn-box">
+                <button class="button-container-btns" id="add-emp">Add new employee</button>
+                <button class="button-container-btns" id="edit-emp">Edit employee</button>
+                <button class="button-container-btns" id="del-emp">Delete employee</button>
+            </div>
         </div>
+        <h2>Employees table</h2>
         <div class="table-container">
-            <!-- <h2>Employee table</h2> -->
             <table class="employee-table">
+
                 <thead>
                     <tr>
                         <th>Select</th>
@@ -143,8 +142,15 @@
                 </tbody>
             </table>
         </div>
+        <div class="button-container">
+            <div class="projectBtns btn-box">
+                <button class="button-container-btns" id="add-project">Add new project</button>
+                <button class="button-container-btns" id="edit-project">Edit project</button>
+                <button class="button-container-btns" id="del-project">Delete project</button>
+            </div>
+        </div>
+        <h2>Projects table</h2>
         <div class="table-container">
-            <!-- <h2>Project table</h2> -->
             <table class="project-table">
                 <thead>
                     <tr>

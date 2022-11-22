@@ -31,6 +31,10 @@ a {
     text-decoration: none;
 }
 
+a > i {
+    pointer-events: none;
+}
+
 .corp-buttons{
     display: flex;
     flex-direction: column;
@@ -84,7 +88,8 @@ button {
     left: 50%;
 }
 
-.action-button{
+.action-button-del,
+.action-button-edit{
     max-width: 50px;
     min-width: 50px;
     margin-left: 5px;
@@ -129,9 +134,28 @@ footer p {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
 }
 
-.action-button:hover,
+.action-button-del:hover,
+.action-button-edit:hover,
 #add-new:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
+}
+
+.corp-button:active, 
+.action-button-del:active,
+.action-button-edit:active,
+#add-new:active{
+    background-color: #527981;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.button-link:active, 
+.action-button-del:active,
+.action-button-edit:active,
+#add-new:active{
+    background-color: #548152;
+    transition-property: background-color;
+    transition-duration: 0.3s;
 }
 
 @media screen and (max-width: 450px) {

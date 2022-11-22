@@ -1,6 +1,7 @@
 package com.liaudanskyte.baigiamasis.project;
 
 import com.liaudanskyte.baigiamasis.ElementDao;
+import com.liaudanskyte.baigiamasis.employee.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -28,6 +29,10 @@ public class ProjectRepository implements ElementDao<Project> {
     @Override
     public List<Project> getAllElements() {
         return projectJpa.findAll();
+    }
+
+    public List<Project> getAllByCompanyId(Long company_id) {
+        return projectJpa.getAllByCompanyId(company_id);
     }
 
     @Override

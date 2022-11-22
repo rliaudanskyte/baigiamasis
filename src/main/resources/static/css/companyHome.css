@@ -58,8 +58,17 @@ footer {
 }
 
 .button-container {
-    /* align-items: center; */
-    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -70,7 +79,7 @@ button {
     cursor: pointer;
 }
 
-.button-container > button {
+.btn-box > button {
     width: calc(100% - 4rem);
     max-width: 200px;
     min-width: 140px;
@@ -92,7 +101,7 @@ a {
     align-items: center;
     overflow-x: scroll;
     white-space: nowrap;
-    margin: 0 auto 150px auto;
+    margin: 0 auto 100px auto;
 }
 
 .employee-table {
@@ -181,4 +190,9 @@ button:hover {
         transform: translateX(0px);
         transform: translatey(60px);
     }
+
+    h2 {
+        text-align: center;
+    }
+
 }

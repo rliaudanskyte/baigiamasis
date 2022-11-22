@@ -52,7 +52,6 @@ public class CompanyController {
         updateCompany.setCompanyName(companyDetails.getCompanyName());
         updateCompany.setAddress(companyDetails.getAddress());
         updateCompany.setEmployeeCount(1);
-        updateCompany.setAverageSalary(1);
         updateCompany.setTotalProjects(1);
         updateCompany.setOngoingProjectCount(1);
         updateCompany.setFinishedProjectCount(1);

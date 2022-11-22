@@ -43,6 +43,12 @@ public class EmployeeController {
         return employeeRepository.getAllElements();
     }
 
+    @GetMapping("/api/v1/employees/of/{company_id}")
+    public List<Employee> getCompanyEmployees(
+            @PathVariable long company_id
+    ) {
+        return employeeRepository.getAllByCompanyId(company_id);
+    }
 
     @PutMapping("/api/v1/employees/{employee_id}")
     public Optional<Employee> updateEmployeeById(

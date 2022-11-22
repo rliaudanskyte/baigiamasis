@@ -14,8 +14,6 @@ public class Company {
     private String address;
     @GeneratedValue
     private int employeeCount;
-    @GeneratedValue
-    private double averageSalary;
 
     private int totalProjects;
     @GeneratedValue
@@ -25,12 +23,11 @@ public class Company {
 
     public Company() {}
 
-    public Company(long id, String companyName, String address, int employeeCount, double averageSalary, int totalProjects, int finishedProjectCount) {
+    public Company(long id, String companyName, String address, int employeeCount, int totalProjects, int finishedProjectCount) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
         this.employeeCount = employeeCount;
-        this.averageSalary = averageSalary;
         this.totalProjects = totalProjects;
         this.ongoingProjectCount = totalProjects - finishedProjectCount;
         this.finishedProjectCount = finishedProjectCount;
@@ -68,14 +65,6 @@ public class Company {
         this.employeeCount = employeeCount;
     }
 
-    public double getAverageSalary() {
-        return averageSalary;
-    }
-
-    public void setAverageSalary(double averageSalary) {
-        this.averageSalary = averageSalary;
-    }
-
     public int getTotalProjects() {
         return totalProjects;
     }
@@ -107,7 +96,6 @@ public class Company {
                 ", companyName = '" + companyName + '\'' +
                 ", address = '" + address + '\'' +
                 ", employeeCount = " + employeeCount +
-                ", averageSalary = " + averageSalary +
                 ", totalProjects = " + totalProjects +
                 ", ongoingProjectCount = " + ongoingProjectCount +
                 ", finishedProjectCount = " + finishedProjectCount +

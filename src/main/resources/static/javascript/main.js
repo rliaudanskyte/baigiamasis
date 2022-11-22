@@ -1,24 +1,29 @@
 const corpButtonsContainer = document.querySelector(".corp-buttons");
 let cookie = document.cookie;
-// const ENDPOINT = '../local_json_files/companies.json';
-const ENDPOINT = 'http://localhost:8080/api/v1/companies';
+const ENDPOINT = '../local_json_files/companies.json';
+const ENDPOINTcompaniesHTTP = 'http://localhost:8080/api/v1/companies';
+let companyIDToLS;
 
 sessionStorage.clear();
 
 fetch(ENDPOINT, {
-    mode: "no-cors"
+// fetch(ENDPOINTcompaniesHTTP, {
+    mode: "cors"
 })
     .then(data => data.json())
     .then(data => {
-        console.table(data);
-        data.forEach( element => createButtons(element));
-        return data;
+      console.table(data);
+      for (let element of data) {
+        createButtons(element);
+      }
+      return data;
     })
     .catch(err => console.log(err));
 
 const createButtons = (element) => {
     const divButtonBox = document.createElement('div');
     divButtonBox.className = "button-box";
+    divButtonBox.id = element.id;
     corpButtonsContainer.append(divButtonBox);
 
     // Slide OUT BUTTONS
@@ -27,20 +32,21 @@ const createButtons = (element) => {
     divButtonBox.append(divContainerForSlideOut);
 
     const editBTN = document.createElement('button');
-    editBTN.className = "action-button";
+    editBTN.className = "action-button-edit";
     divContainerForSlideOut.append(editBTN);
 
     const aLinkToEdit = document.createElement('a');
     aLinkToEdit.classList = "edit button-link";
-    aLinkToEdit.href = "#"; //todo: ADD LINK
+    aLinkToEdit.href = "editCorp.html";
     editBTN.append(aLinkToEdit);
 
     const editIcon = document.createElement('i');
     editIcon.className = "fa-solid fa-pen";
+    editIcon.id = "edit-icon";
     aLinkToEdit.append(editIcon);
     
     const delBTN = document.createElement('button');
-    delBTN.className = "action-button";
+    delBTN.className = "action-button-del";
     divContainerForSlideOut.append(delBTN);
 
     const aLinkToDel = document.createElement('a');
@@ -50,6 +56,7 @@ const createButtons = (element) => {
 
     const delIcon = document.createElement('i');
     delIcon.className = "fa-solid fa-trash";
+    delIcon.id = "delete-icon";
     aLinkToDel.append(delIcon);
 
 
@@ -64,19 +71,73 @@ const createButtons = (element) => {
     divForButton.append(corpButton);
 
     const aLinkToCompany = document.createElement('a');
-    aLinkToCompany.classList = "del button-link";
-    // aLinkToCompany.href = "html\\companyHome.html";  
+    aLinkToCompany.classList = "button-link";
+    aLinkToCompany.id = "button-link";
+    aLinkToCompany.href = "companyHome.html";
     aLinkToCompany.textContent = element.companyName;
     corpButton.append(aLinkToCompany);
 
 }
 
 let btns = document.querySelectorAll('.corp-button');
+console.table(btns);
 
 for (i of btns) {
   (function(i) {
-    i.addEventListener('click', function() {
+    i.addEventListener('click', function(e) {
       console.log(i);
+      console.log('clicked');
+      alert(e.target.parentNode.className + " button")
     });
   })(i);
+}
+
+let btnsLinks = document.querySelectorAll('.corp-button > .button-link');
+console.table(btnsLinks);
+
+for (i of btnsLinks) {
+  (function(i) {
+    i.addEventListener('click', function(e) {
+      console.log(i);
+      console.log('clicked');
+      alert(e.target.parentNode.className + " target link")
+    });
+  })(i);
+}
+
+document.body.addEventListener('click', event => {
+  if (event.target.nodeName == "A") {
+    // console.log("Clicked on <a>.", event.target.parentNode.className, event.target.parentNode.parentNode.parentNode.id);
+    companyIDToLS = event.target.parentNode.parentNode.parentNode.id;
+    localStorage.setItem("companyID", companyIDToLS);
+    if (event.target.parentNode.className == "action-button-del") {
+      deleteCompanyById(companyIDToLS);
+    }
+    if (event.target.parentNode.className == "action-button-edit") {
+      location.href = "editCorp.html";
+    }
+  }
+  if (event.target.nodeName == "BUTTON") {
+    // console.log("yay, button", event.target.className, event.target.parentNode.parentNode.id);
+    companyIDToLS = event.target.parentNode.parentNode.id;
+    localStorage.setItem("companyID", companyIDToLS);
+    if (event.target.className == "action-button-del") {
+      deleteCompanyById(companyIDToLS);
+    }
+    if (event.target.className == "action-button-edit") {
+      location.href = "editCorp.html";
+    }
+  }
+  if (event.target.id == "add-new") {
+    location.href='addNewCorp.html';
+  }
+})
+
+const deleteCompanyById = companyToDeleteID => {
+  fetch(`${ENDPOINTcompanies}/${companyToDeleteID}`, {
+    method: 'DELETE',
+    mode: "cors"
+  })
+  .then(res => res.json())
+  .then(() => location.reload());
 }

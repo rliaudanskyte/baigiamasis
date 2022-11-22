@@ -29,6 +29,9 @@ public class EmployeeRepository implements ElementDao<Employee> {
     public List<Employee> getAllElements() {
         return employeeJpa.findAll();
     }
+    public List<Employee> getAllByCompanyId(Long company_id) {
+        return employeeJpa.getAllByCompanyId(company_id);
+    }
 
     @Override
     public Optional<Employee> getById(Long id) {

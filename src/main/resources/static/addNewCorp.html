@@ -20,13 +20,30 @@
         </div>
     </header>
     <main>
-        <form  method="POST">
+        <h3 id="company-form-title">Add new company</h3>
+        <form id="company-form" method="POST">
         <!-- <form action="https://formsubmit.co/rliaudanskyte@gmail.com" method="POST"> -->
             <input type="text" name="companyName" id="companyName" placeholder="Company name">
-            <input type="text" name="companyID" id="companyID" placeholder="Company ID">
+            <input type="number" name="companyID" id="companyID" placeholder="Company ID">
             <input type="text" name="companyAddress" id="companyAddress" placeholder="Company Address">
             <input type="submit" value="Submit">
         </form>
+
+        <h3 id="employee-form-title">Add new employee to the company</h3>
+        <form  id="employee-form" method="POST">
+            <!-- <form action="https://formsubmit.co/rliaudanskyte@gmail.com" method="POST"> -->
+            <input type="text" name="employeeName" id="employeeName" placeholder="Employee name" value="Murklas">
+            <input type="number" name="employeeID" id="employeeID" placeholder="Employee ID" value="1564236444">
+            <input type="text" name="jobTitle" id="jobTitle" placeholder="Job title" value="Sleeper agent">
+            <input type="number" name="certifNum" id="certifNum" placeholder="Certification number" value="1235568213">
+            <input type="number" name="salary" id="salary" placeholder="Yearly salary" value="1000000">
+            <input type="text" name="startedWorking" id="startedWorking" placeholder="Started working(yyyy-MM-dd)" value="2012-05-08">
+            <input type="text" name="ifStillWorking" id="ifStillWorking" placeholder="If still working" value="true">
+            <input type="submit" value="Submit">
+        </form>
+        
+        <h2 id="congrats">Submition successful</h2>
+
     </main>
     <footer>
         <button id="go-home"><a href="index.html"><i class="fa-solid fa-house"></i></a></button>

@@ -39,11 +39,18 @@ public class ProjectController {
             throw new InvalidRequestException("Project does not exist with id: " + project_id);
         }
     }
-
     @GetMapping("/api/v1/projects")
     public List<Project> getCompanyProjects() {
         return projectRepository.getAllElements();
     }
+
+    @GetMapping("/api/v1/projects/of/{company_id}")
+    public List<Project> getCompanyProjects(
+            @PathVariable long company_id
+    ) {
+        return projectRepository.getAllByCompanyId(company_id);
+    }
+
 
     @PutMapping("/api/v1/projects/{project_id}")
     public Optional<Project> deleteProjectsById(
