@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderCorp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/companyHome.css">
+</head>
+<body>
+    <header>
+        <div class="header-text-container">
+            <h2>WonderCorp</h2>
+            <h4>Inner corporation's managment system</h4>    
+        </div>        
+        <div class="header-brand-container">
+            <h1 class="corp-name">The Lightsaber company</h1>
+        </div>
+    </header>
+    <main>
+        <div class="display-table">
+            <div class="info-unit">
+                <div class="display-titles titles corp-id">Company ID</div>
+                <div class="display-titles data-to-display" id="corp-id">851195866</div>
+            </div>
+            <div class="info-unit">
+                <div class="display-titles titles corp-adress">Address</div>
+                <div class="display-titles data-to-display" id="corp-adress">Tatooine</div>
+            </div>
+            <div class="info-unit">
+                <div class="display-titles titles total-active-emps">Active employee count</div>
+                <div class="display-titles data-to-display" id="total-active-emps">7</div>
+            </div>
+            <div class="info-unit">
+                <div class="display-titles titles corp-avg-salary">Average salary</div>
+                <div class="display-titles data-to-display" id="corp-avg-salary">181412.0 €/year</div>
+            </div>
+            <div class="info-unit">
+                <div class="display-titles titles corp-active-projects">Active project count</div>
+                <div class="display-titles data-to-display" id="corp-active-projects">3</div>
+            </div>
+            <div class="info-unit">
+                <div class="display-titles titles corp-finished-projects">Completed project count</div>
+                <div class="display-titles data-to-display" id="corp-finished-projects">10</div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="button-container-btns see-employee-list">Employees</button>
+            <button class="button-container-btns see-project-list">Projects</button>
+        </div>
+        <div class="table-container">
+            <!-- <h2>Employee table</h2> -->
+            <table class="employee-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Employee name</th>
+                        <th>ID</th>
+                        <th>Job title</th>
+                        <th>Qualification number</th>
+                        <th>Salary</th>
+                        <th>Started working</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="burga" id="radio1"></td>
+                        <td>Darth Maul</td>
+                        <td>888798881</td>
+                        <td>Master Sith</td>
+                        <td>812001880</td>
+                        <td><span>95200</span> €/year</td>
+                        <td>1980-11-21</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio2"></td>
+                        <td>Luke Skywalker</td>
+                        <td>888798882</td>
+                        <td>Master Yedi</td>
+                        <td>800001899</td>
+                        <td><span>84500</span> €/year</td>
+                        <td>2011-05-06</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio3"></td>
+                        <td>Darth Maul</td>
+                        <td>888798881</td>
+                        <td>Master Sith</td>
+                        <td>812001880</td>
+                        <td><span>95200</span> €/year</td>
+                        <td>1980-11-21</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio4"></td>
+                        <td>Luke Skywalker</td>
+                        <td>888798882</td>
+                        <td>Master Yedi</td>
+                        <td>800001899</td>
+                        <td><span>84500</span> €/year</td>
+                        <td>2011-05-06</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio5"></td>
+                        <td>Darth Maul</td>
+                        <td>888798881</td>
+                        <td>Master Sith</td>
+                        <td>812001880</td>
+                        <td><span>95200</span> €/year</td>
+                        <td>1980-11-21</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio6"></td>
+                        <td>Luke Skywalker</td>
+                        <td>888798882</td>
+                        <td>Master Yedi</td>
+                        <td>800001899</td>
+                        <td><span>84500</span> €/year</td>
+                        <td>2011-05-06</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio7"></td>
+                        <td>Darth Maul</td>
+                        <td>888798881</td>
+                        <td>Master Sith</td>
+                        <td>812001880</td>
+                        <td><span>95200</span> €/year</td>
+                        <td>1980-11-21</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio8"></td>
+                        <td>Luke Skywalker</td>
+                        <td>888798882</td>
+                        <td>Master Yedi</td>
+                        <td>800001899</td>
+                        <td><span>84500</span> €/year</td>
+                        <td>2011-05-06</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-container">
+            <!-- <h2>Project table</h2> -->
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Project name</th>
+                        <th>ID</th>
+                        <th>Location</th>
+                        <th>Date of the start</th>
+                        <th>If finished</th>
+                        <th>Project manager</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="burga" id="radio9"></td>
+                        <td>Master the farce</td>
+                        <td>111223</td>
+                        <td>Planet Dagobruh</td>
+                        <td>1969-06-09</td>
+                        <td>false</td>
+                        <td>Finn</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio10"></td>
+                        <td>Saving Han Solo from Jabba the Hutt</td>
+                        <td>369678</td>
+                        <td>Tatooine</td>
+                        <td>2300-12-02</td>
+                        <td>true</td>
+                        <td>Luke Skywalker</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="burga" id="radio11"></td>
+                        <td>Master the farce</td>
+                        <td>111223</td>
+                        <td>Planet Dagobruh</td>
+                        <td>1969-06-09</td>
+                        <td>false</td>
+                        <td>Finn</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio12"></td>
+                        <td>Saving Han Solo from Jabba the Hutt</td>
+                        <td>369678</td>
+                        <td>Tatooine</td>
+                        <td>2300-12-02</td>
+                        <td>true</td>
+                        <td>Luke Skywalker</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="burga" id="radio13"></td>
+                        <td>Master the farce</td>
+                        <td>111223</td>
+                        <td>Planet Dagobruh</td>
+                        <td>1969-06-09</td>
+                        <td>false</td>
+                        <td>Finn</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio14"></td>
+                        <td>Saving Han Solo from Jabba the Hutt</td>
+                        <td>369678</td>
+                        <td>Tatooine</td>
+                        <td>2300-12-02</td>
+                        <td>true</td>
+                        <td>Luke Skywalker</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="burga" id="radio15"></td>
+                        <td>Master the farce</td>
+                        <td>111223</td>
+                        <td>Planet Dagobruh</td>
+                        <td>1969-06-09</td>
+                        <td>false</td>
+                        <td>Finn</td>
+                    </tr>
+                    <tr>                        
+                        <td><input type="radio" name="burga" id="radio16"></td>
+                        <td>Saving Han Solo from Jabba the Hutt</td>
+                        <td>369678</td>
+                        <td>Tatooine</td>
+                        <td>2300-12-02</td>
+                        <td>true</td>
+                        <td>Luke Skywalker</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>All rights reserved WonderCorp© 2022</p>
+        <button id="go-home"><a href="index.html"><i class="fa-solid fa-house"></i></a></button>
+    </footer>
+
+
+    <script src="companyHome.js"><i class="fa-solid fa-house"></i></script>
+</body>
+</html>

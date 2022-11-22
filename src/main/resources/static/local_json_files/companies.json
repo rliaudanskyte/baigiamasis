@@ -1,0 +1,32 @@
+[
+    {
+    "id": 851195866,
+    "companyName": "The Lightsaber company",
+    "address": "Tatuine",
+    "employeeCount": 7,
+    "averageSalary": 181412.0,
+    "totalProjects": 13,
+    "ongoingProjectCount": 3,
+    "finishedProjectCount": 10
+    },
+    {
+    "id": 904155398,
+    "companyName": "The Avengers corp",
+    "address": "New York",
+    "employeeCount": 6,
+    "averageSalary": 135714.2857142857,
+    "totalProjects": 2,
+    "ongoingProjectCount": 0,
+    "finishedProjectCount": 2
+    },
+    {
+    "id": 171838831,
+    "companyName": "The Fellowship Inc",
+    "address": "Middle-earth",
+    "employeeCount": 6,
+    "averageSalary": 649348.5714285715,
+    "totalProjects": 3,
+    "ongoingProjectCount": 1,
+    "finishedProjectCount": 2
+    }
+    ]

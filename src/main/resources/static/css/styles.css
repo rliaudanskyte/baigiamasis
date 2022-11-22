@@ -1,0 +1,147 @@
+* {
+    font-family: 'Abel', sans-serif;
+    box-sizing: border-box;
+}
+
+header, 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    margin-inline: auto;
+    width: calc(100% - 2rem);
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+header > *  {
+    text-align: center;
+}
+
+main {
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+a {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+}
+
+.corp-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button-box {
+    width: calc(100% - 4rem);
+    max-width: 260px;
+    min-width: 230px;
+    position: relative;
+    height: 90px;
+    background-color: white;
+    margin-inline: auto;
+    display: flex;
+
+    transition-property: height;
+    transition-duration: 0.3s;
+    /* transition-delay: 300ms; */
+}
+
+.buttons-with-company-name
+.buttons-slide-out {
+    width: 100%;
+    max-width: 260px;
+    position: absolute;
+    align-items: center;
+
+}
+
+.buttons-slide-out{
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    width: 100%;
+}
+
+button {
+    height: 50px;
+    margin: 0;
+    background-color: #91d4e3;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.corp-button {
+    width: 100%;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.action-button{
+    max-width: 50px;
+    min-width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #91d4e3;
+    margin-block-start: 50%;
+}
+
+footer > #add-new {
+    /* width: 60px; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+footer p {
+    text-align: center;
+    color: rgb(128, 128, 128);
+    margin: 0px;
+    padding: 10px;
+    height: 100%;
+    vertical-align: baseline;
+}
+
+.button-box:hover .buttons-slide-out{
+    transform: translateX(180px);
+}
+
+.button-box:hover .corp-button{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
+}
+
+.action-button:hover,
+#add-new:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
+}
+
+@media screen and (max-width: 450px) {
+    .button-box:hover {
+        height: 130px;
+        transition-property: height;
+        transition-duration: 0.3s;
+    }
+    .button-box:hover .buttons-slide-out{
+        transform: translateX(0px);
+        transform: translatey(60px);
+    }
+}
