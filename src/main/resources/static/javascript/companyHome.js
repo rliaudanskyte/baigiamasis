@@ -78,7 +78,7 @@ const setUpEmpTable = element => {
     tableData6.append(wageSpan, " €/year");
     
     radioButton.type = "radio";
-    radioButton.name = "emp";
+    radioButton.value = "emp";
     radioButton.id = element.employeeId;
     tableData2.textContent = element.name;
     tableData3.textContent = element.employeeId;
@@ -119,8 +119,8 @@ const setUpProjTable = element => {
     
     radioButton.type = "radio";
     radioButton.name = "proj";
-    radioButton.id = element.projectId;
-    tableData1.textContent = element.projectId;
+    radioButton.value = element.projectId;
+
     tableData2.textContent = element.projectName;
     tableData3.textContent = element.employeeId;
     tableData4.textContent = element.projectLocation;
@@ -129,6 +129,10 @@ const setUpProjTable = element => {
     tableData7.textContent = element.projectManagerId;
 }  
 
+let selectedRadioId;
+
+
+
 addEmpBTN.addEventListener('click', (e) => {
     console.log(e.target.className); 
     // window.open("addNewEmp.html", '_self');
@@ -136,10 +140,18 @@ addEmpBTN.addEventListener('click', (e) => {
 })
 
 editEmpBTN.addEventListener('click', e => {
+    console.log("edit EMP was pressed");
+    let employeeRadioButtons = document.querySelector('input[name=emp]:checked').value;
+    let projcectRadioButtons = document.querySelector('input[name=proj]:checked').value;
 
+    console.log(employeeRadioButtons, projcectRadioButtons);
 })
 
 delEmpBTN.addEventListener('click', e => {
+    let employeeRadioButtons = document.querySelector('input[name=emp]:checked').value;
+    let projcectRadioButtons = document.querySelector('input[name=proj]:checked').value;
+
+    console.log(employeeRadioButtons, projcectRadioButtons);
 
 })
 
@@ -148,9 +160,27 @@ addPrjBTN.addEventListener('click', () => {
 })
 
 editPrjBTN.addEventListener('click', e => {
+    let employeeRadioButtons = document.querySelector('input[name=emp]:checked').value;
+    let projcectRadioButtons = document.querySelector('input[name=proj]:checked').value;
+
+    console.log(employeeRadioButtons, projcectRadioButtons);
 
 })
 
 delPrjBTN.addEventListener('click', e => {
+    let employeeRadioButtons = document.querySelector('input[name=emp]:checked').value;
+    let projcectRadioButtons = document.querySelector('input[name=proj]:checked').value;
+
+    console.log(employeeRadioButtons, projcectRadioButtons);
 
 })
+
+// function iterateRadioBTNS (radioArray, elemType) {
+//     for(let element of radioArray) {
+//         if (element.checked) {
+//             selectedRadioId = element.value;
+//             console.log(selectedRadioId);
+//             localStorage.setItem(`selectedEmployee${elemType}`, `${selectedRadioId}`);
+//         }
+//     }    
+// }

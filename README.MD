@@ -3,7 +3,7 @@
 This project has a _vanilla_ JavaScript frontend and Spring Boot service for company project and employee management.
 
 The correct way to start the application is to start the Postgres database with pgAdmin4, start "baigiamasisApplication",
-(on init it will create a database with  three entities **"Companies"**, **"Employees"** and **"Projcts"**; will configurate JPA repositories and REST controllers ) and finally the frontend
+(on init it will create a database with  three entities **"Companies"**, **"Employees"** and **"Projects"**; will configurate JPA repositories and REST controllers ) and finally the frontend
 
 `docker-compose up db`
 

@@ -26,13 +26,12 @@ projectForm.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(companyIdValue);
 
-    const projectId = e.target.elements.projectId;
-    const projectName = e.target.elements.projectName;
-    const projectLocation = e.target.elements.projectLocation;
-    const projectStartDate = e.target.elements.projectStartDate;
-    const ifFinished = e.target.elements.ifFinished;
-    const projectManagerId = e.target.elements.projectManagerId;
-    const companyExecutiveId = companyIdValue;
+    const projectId = e.target.elements.projectId.value;
+    const projectName = e.target.elements.projectName.value;
+    const projectLocation = e.target.elements.projectLocation.value;
+    const projectStartDate = e.target.elements.projectStartDate.value;
+    const ifFinished = e.target.elements.ifFinished.value;
+    const projectManagerId = e.target.elements.projectManagerId.value;
 
     const newProj = new Project(projectId, projectName, projectLocation, projectStartDate, ifFinished, projectManagerId);
     
@@ -64,7 +63,7 @@ const postProjectToServer = (obj) => {
         return res.json()
     })
     .then(data => {
-        console.table(data);
+        console.log(data);
     })
     .catch(err => console.log(err))
 } 
